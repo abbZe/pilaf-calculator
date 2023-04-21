@@ -1,39 +1,209 @@
+/*======================================*/
+/* ============= RESET =================*/
+/*======================================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*======================================*/
+/* ========= COLOR PALETTE =============*/
+/*======================================*/
+:root {
+  --mainPageBgColor: #ffaa00;
+  --mainAppBgColor: #ffbd39;
+  --mainTextColor: #805500;
+  --secondaryTextColor: #b27600;
+}
+
+/*======================================*/
+/* ========== USER STYLES ==============*/
+/*======================================*/
+html {
+  /*Typography*/
+  font-size: 1.5rem;
+  color: var(--mainTextColor);
+
+  /*Visual*/
+  background-color: var(--mainPageBgColor);
+}
+
 .App {
-  text-align: center;
+  /*Box model*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+article {
+  /*Box model*/
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 30vw;
+  height: auto;
+
+  /*Visual*/
+  background-color: var(--mainAppBgColor);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.out {
+  /*Box model*/
+  margin-top: 1rem;
 }
 
-.App-header {
-  min-height: 100vh;
+.out p:not(:last-child) {
+  /*Box model*/
+  margin-bottom: 0.3rem;
+}
+
+.out p:last-child {
+  /*Typography*/
+  font-size: 0.7rem;
+  color: var(--secondaryTextColor);
+}
+
+h1 {
+  /*Box model*/
+  margin-bottom: 1rem;
+  /*Typography*/
+  font-size: 1.3rem;
+}
+
+.question {
+  /*Box model*/
+  padding-block: 1rem;
+}
+
+.input {
+  /*Box model*/
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 0.2rem;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+label {
+  /*Box model*/
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+input {
+  /*Box model*/
+  height: 1.2rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  border: none;
+
+  /*Typography*/
+  font-size: 0.6rem;
+  color: var(--mainTextColor);
+
+  /*Visual*/
+  background-color: var(--mainPageBgColor);
+}
+
+input:focus {
+  /*Visual*/
+  outline: 2px solid var(--mainTextColor);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder {
+  /*Typography*/
+  color: var(--mainTextColor);
+}
+
+.result {
+  /*Box model*/
+  margin-top: 1rem;
+}
+
+.glassMl {
+  /*Typography*/
+  font-size: 0.7rem;
+}
+
+/*======================================*/
+/* ============ ADAPTING ===============*/
+/*======================================*/
+@media screen and (max-width: 1000px) {
+  html {
+    /*Typography*/
+    font-size: 2rem;
   }
-  50% {
-    transform: translateY(10px);
+
+  article {
+    /*Box model*/
+    width: 90vw;
   }
-  100% {
-    transform: translateY(0px);
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    /*Typography*/
+    font-size: 1.3rem;
+  }
+
+  article {
+    /*Box model*/
+    width: 90vw;
+  }
+
+  input {
+    /*Box model*/
+    height: 2rem;
+    margin-right: 1rem;
+
+    /*Typography*/
+    font-size: 0.7rem;
   }
 }
